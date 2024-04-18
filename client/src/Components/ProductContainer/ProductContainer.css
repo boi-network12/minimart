@@ -1,0 +1,56 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.ProductContainer{
+    width: 100%;
+    height: 100vh;
+    margin-top: 60px;
+}
+
+.ProductContainer .moveText{
+    text-align: center;
+    position: relative;
+    width: 100%;
+    height: 15px;
+    overflow: hidden;
+}
+
+.ProductContainer .moveText .textIn{
+  width: 100%;
+  color: #ccc;
+  font-size: 12px;
+  text-align-last: left;
+  position: absolute;
+  animation: moveText 100s linear infinite;
+}
+
+.ProductContainer .containerGrid{
+    display: grid;
+    grid-template-columns: repeat(50px) 1fr;
+    overflow: hidden;
+}
+
+@keyframes moveText {
+    0%{
+        transform: translateX(0%);
+    }
+    100%{
+        transform: translateX(100%);
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    /** for tablet */
+  }
+
+  
+  @media only screen and (max-width: 480px) {
+    /** for mobile */
+    .ProductContainer{
+        margin-top: 100px;
+    }
+  }
+  
