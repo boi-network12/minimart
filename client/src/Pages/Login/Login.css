@@ -5,7 +5,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    position: relative;
 }
 
 .containerF form{
@@ -15,6 +14,119 @@
     border-radius: 20px;
     overflow: hidden;
     box-shadow: 0 0 1000px #aaa;
+    position: relative;
+}
+
+.containerF form .cancelIcon{
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 20px;
+    background: #ccc;
+    border-radius: 50%;
+    width: 30px;
+    cursor: pointer;
+    height: 30px;
+    text-align: center;
+    box-shadow: 0 0 5px #333;
+    line-height: 20px;
+    padding: 8px;
+}
+
+.containerF form img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-top: 30px;
+    object-fit: cover;
+}
+
+.containerF form{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 0 80px;
+}
+
+.containerF .section h2{
+    text-align: left;
+    width: 100%;
+    font-size: 30px;
+    margin-top: 10px;
+    margin-bottom: 30px;
+    font-weight: 700;
+}
+
+.containerF .section{
+    width: 100%;
+    height: 100%;
+}
+
+.containerF form .section{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.containerF form .section .inputField{
+    background: #000;
+    width: 100%;
+    height: 50px;
+    overflow: hidden;
+    border-radius: 2px;
+    margin-bottom: 10px;
+}
+
+.containerF form .section .inputField input{
+    width: 100%;
+    height: 100%;
+    outline-color: green;
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
+.containerF form .section h5{
+    font-size: 18px;
+}
+
+.containerF form .section p{
+    font-size: 14px;
+    color: #acacac;
+    line-height: 15px;
+}
+
+.containerF form .section .date{
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.containerF form .section .date select{
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    outline-color: green;
+    color: #acacac;
+}
+
+.containerF form .section button{
+    margin-top: 50px;
+    height: 50px;
+    width: 100%;
+    border-radius: 30px;
+    border: none;
+    font-size: 18px;
+    font-weight: 600;
+    color: #f2f2f2;
+    background: green;
+}
+
+.containerF form .section button:hover{
+    opacity: .7;
 }
 
 @media only screen and (max-width: 768px) {
@@ -49,6 +161,15 @@
         width: 100%;
         height: 100%;
         border-radius: 0;
+        padding: 0 30px;
+    }
+
+    .containerF form img{
+        margin-top: 80px;
+    }
+
+    .containerF form h2{
+        font-weight: 600;
     }
   }
   
