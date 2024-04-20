@@ -62,7 +62,7 @@ const Header = () => {
             </div>
           )}
         <div className="block5">
-        <p><FaCartPlus /> <span>Cart</span> <aside>1</aside></p>
+          <Link to='/cart'><p><FaCartPlus /> <span>Cart</span> <aside>1</aside></p></Link>
         </div>
       </div>
     </div>

@@ -2,7 +2,7 @@
     position: absolute;
     top: 60px;
     bottom: 0;
-    width: 400px;
+    width: 20%;
     left: -15px;
     background: #fff;
     z-index: 1000;
@@ -115,15 +115,29 @@
 
 @media only screen and (max-width: 768px) {
     /** for tablet */
+    .sidebar{
+        width: 70%;
+        padding: 20px 30px;
+        top: 60px;
+    }
   }
+
+  @media only screen and (max-width: 884px) {
+    /** for tablet */
+    .sidebar{
+       width: 45%;
+    }
+  }
+
 
   @media only screen and (max-width: 480px) {
     /** for mobile */
     .sidebar{
-        width: 420px;
+        width: 100%;
         padding: 20px 30px;
         top: 60px;
     }
+
 
     .sidebar .sideBarImg{
         display: none;
