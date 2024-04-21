@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import './Login.css';
 import Cloud from '../../Assets/cloud.jpeg';
 import { FaTimes } from 'react-icons/fa';
-import { MONTHS, DAYS, YEARS} from '../../Constant/Date'
 import { useNavigate, Link } from 'react-router-dom';
 
 
@@ -47,7 +46,7 @@ const Login = () => {
                 <input type="email" placeholder='Email' name='email' value={formData.email} onChange={handleChange} />
             </div>
             
-            <span>Don't have any account? <Link to='/signUp'>sign Up</Link></span>
+            <p>Don't have any account? <Link to='/signUp'>sign Up</Link></p>
             <button onClick={nextStep}>Next</button>
           </div>
         );

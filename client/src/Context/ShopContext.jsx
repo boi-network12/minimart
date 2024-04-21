@@ -19,10 +19,21 @@ export const ShopContextProvider = (props) => {
 
 const removeFromCart = (itemId) => {
     setCartItem((prev) => ({ ...prev, [itemId]: prev[itemId] - 1 }));
+
+};
+
+const getTotal = () => {
+    return Object.keys(cartItem).reduce((total, itemId) => {
+        const item = Details.find((product) => product.id === parseInt(itemId));
+        if (item && item.price) {
+            return total + (item.price * cartItem[itemId]);
+        }
+        return total; // Return total unchanged if item or item.price is undefined
+    }, 0);
 };
 
 
-   const contextValue = {cartItem, addToCart, removeFromCart};
+   const contextValue = {cartItem, addToCart, removeFromCart, getTotal};
    
 
     return(

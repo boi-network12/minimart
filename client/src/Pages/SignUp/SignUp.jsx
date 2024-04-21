@@ -34,17 +34,29 @@ const SignUp = () => {
     let error = '';
 
     switch (name) {
+      case 'name':
+        // Email validation logic
+        if(value.length < 5){
+          error = 'must be greater than  or equal to five(5)'
+        }
+        break;
       case 'email':
         // Email validation logic
         if(!value.includes('@')){
-          error = 'invalid email format'
+          error = 'invalid email format must contain \'@\' symbol'
         }
         break;
       case 'password':
         // Password validation logic
-        break;
-      case 'name':
-        // Name validation logic
+        if (
+          !/(?=.*[a-z])/.test(value) ||
+          !/(?=.*[A-Z])/.test(value) ||
+          !/(?=.*\d)/.test(value) ||
+          !/(?=.*[!@#$%^&*])/.test(value) ||
+          value.length < 8
+        ) {
+          error = 'password must contain at least 8 characters, including one uppercase letter, one lowercase letter, one number, and one symbol'
+        }
         break;
       default:
         break;
@@ -54,6 +66,7 @@ const SignUp = () => {
       ...prevData,
       [name]: value,
     }));
+
     setFormErrors((prevErrors) => ({
       ...prevErrors,
       [name]: error,
@@ -87,11 +100,12 @@ const isFormValid = Object.values(formErrors).every(error => error === '');
             <div className="inputField">
                <input type="text" placeholder='Name' name='name' value={formData.name} onChange={handleChange} />
             </div>
+            {formErrors.name && <span className='error'>{formErrors.name} </span>}
                
             <div className="inputField">
                 <input type="email" placeholder='Email' name='email' value={formData.email} onChange={handleChange} />
             </div>
-            {formErrors.name && <span className='error'>{formErrors.email} </span>}
+            {formErrors.email && <span className='error'>{formErrors.email} </span>}
             <h5>Date of birth</h5>
             <p>This will not be shown publicly. Confirm your own age, even if this account is for a business, a pet, or something else.</p>
             <div className="date">
@@ -111,7 +125,7 @@ const isFormValid = Object.values(formErrors).every(error => error === '');
                 ))}
               </select>
             </div>
-            <span>Already have an account? <Link to='/login'> Login</Link></span>
+            <p>Already have an account? <Link to='/login'> Login</Link></p>
             <button onClick={nextStep} disabled={!isFormValid}>Next</button>
           </div>
         );
@@ -123,7 +137,7 @@ const isFormValid = Object.values(formErrors).every(error => error === '');
             <div className='inputField'>
             <input type="password" placeholder='Password' name='password' value={formData.password} onChange={handleChange} />
           </div>
-          {formErrors.name && <span className='error'>{formErrors.password} </span>}
+          {formErrors.password && <span className='error'>{formErrors.password} </span>}
             <button onClick={handleSubmit}>Submit</button>
           </div>
         );
